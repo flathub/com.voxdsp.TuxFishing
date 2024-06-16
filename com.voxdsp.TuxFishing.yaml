@@ -36,4 +36,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/mrbid/tuxfishing.git
-        commit: 5deb6c6276d779805520909c80f0db6b598de9c7
+        commit: 2d808c848ee982022f8ef1cab4a620ce778da4b1
