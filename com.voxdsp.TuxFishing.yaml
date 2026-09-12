@@ -1,6 +1,6 @@
 app-id: com.voxdsp.TuxFishing
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: tuxfishing
 rename-icon: tuxfishing
@@ -26,14 +26,15 @@ modules:
         url: https://github.com/glfw/glfw.git
         # The latest commit from the repository
         commit: fdd14e65b1c29e4e6df875fb5669ec00d6793531
+
   - name: tuxfishing
     buildsystem: simple
     build-commands:
       - cc main.c -I inc -Ofast -L/app/lib -lglfw -lm -o tuxfishing
       - install -Dm 0755 tuxfishing -t ${FLATPAK_DEST}/bin
-      - install -Dm 0644 flat/tuxfishing.desktop ${FLATPAK_DEST}/share/applications/tuxfishing.desktop
-      - install -Dm 0644 flat/tuxfishing.appdata.xml ${FLATPAK_DEST}/share/metainfo/tuxfishing.appdata.xml
-      - install -Dm 0644 flat/tuxfishing.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/tuxfishing.png
+      - install -Dm 0644 flat/tuxfishing.desktop -t ${FLATPAK_DEST}/share/applications/
+      - install -Dm 0644 flat/tuxfishing.appdata.xml -t ${FLATPAK_DEST}/share/metainfo/
+      - install -Dm 0644 flat/tuxfishing.png -t ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/
     sources:
       - type: git
         url: https://github.com/mrbid/tuxfishing.git
